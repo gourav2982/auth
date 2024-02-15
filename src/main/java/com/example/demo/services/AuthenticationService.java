@@ -28,13 +28,23 @@ public class AuthenticationService {
                   .builder()
                   .uname(request.getUname())
                   .email(request.getEmail())
+                    .phone(request.getPhone())
+                    .address(request.getAddress())
                   .password(passwordEncoder.encode(request.getPassword()))
                   .role(request.getRole())
                   .build();
 
       user = userService.save(user);
       var jwt = jwtService.generateToken(user);
-      return JwtAuthenticationResponse.builder().token(jwt).id(user.getId()).username(user.getUname()).email(user.getEmail()).build();
+      return JwtAuthenticationResponse
+              .builder()
+              .token(jwt)
+              .id(user.getId())
+              .username(user.getUname())
+              .email(user.getEmail())
+              .address(user.getAddress())
+              .phone(user.getPhone())
+              .build();
   }
 
 
@@ -44,7 +54,8 @@ public class AuthenticationService {
       var user = userRepository.findByEmail(request.getEmail())
               .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
       var jwt = jwtService.generateToken(user);
-      return JwtAuthenticationResponse.builder().token(jwt).id(user.getId()).username(user.getUname()).email(user.getEmail()).build();
+      return JwtAuthenticationResponse.builder().token(jwt).id(user.getId()).username(user.getUname()).email(user.getEmail()).address(user.getAddress())
+              .phone(user.getPhone()).build();
   }
   
 }

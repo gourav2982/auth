@@ -28,11 +28,16 @@ public class User implements UserDetails {
 
   @Column(unique = true)
   String email;
+  @Column(unique = true)
+  String phone;
+  String address;
 
   String password;
 
   @Enumerated(EnumType.STRING)
   Role role;
+  String profilePic;
+
 
   LocalDateTime createdAt;
 

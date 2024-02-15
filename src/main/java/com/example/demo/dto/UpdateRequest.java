@@ -10,12 +10,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SignUpRequest {
-  String uname;
-  String email;
-  String phone;
-  String address;
-  Role role;
-  String password;
-
+public class UpdateRequest {
+    String email;
+    String uname;
+    String phone;
+    String address;
+    String profilePic;
 }

@@ -17,6 +17,7 @@ public class AuthenticationController {
 
 
     @PostMapping("/signup")
+    @CrossOrigin(origins = "http://localhost:3030")
     public JwtAuthenticationResponse signup(@RequestBody SignUpRequest request) {
         return authenticationService.signup(request);
     }

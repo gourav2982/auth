@@ -22,7 +22,7 @@ public class JwtService {
   String jwtSecretKey ="8Zz5tw0Ionm3XPZZfN0NOml3z9FMfmpgXwovR9fp6ryDIoGRM8EPHAB6iHsc0fb";
 
 
-  Long jwtExpirationMs = 30000L;
+  Long jwtExpirationMs = 3000000L;
 
   public String extractUserName(String token) {
       return extractClaim(token, Claims::getSubject);
