@@ -37,6 +37,7 @@ public class User implements UserDetails {
   @Enumerated(EnumType.STRING)
   Role role;
   String profilePic;
+  String pin;
 
 
   LocalDateTime createdAt;

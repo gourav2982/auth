@@ -15,5 +15,6 @@ public class UpdateRequest {
     String uname;
     String phone;
     String address;
+    String pin;
     String profilePic;
 }

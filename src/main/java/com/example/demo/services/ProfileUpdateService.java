@@ -26,6 +26,7 @@ public class ProfileUpdateService {
         user.setAddress(updateRequest.getAddress());
         user.setUname(updateRequest.getUname());
         user.setPhone(updateRequest.getPhone());
+        user.setPin(updateRequest.getPin());
         userService.save(user);
         return UpdateResponse.builder().message("Update Successful").build();
     }
